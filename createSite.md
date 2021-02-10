@@ -1,3 +1,7 @@
+# beginnings
+
+https://ubuntu.com/tutorials/install-and-configure-nginx#5-activating-virtual-host-and-testing-results
+
 # make index.html
 
 
