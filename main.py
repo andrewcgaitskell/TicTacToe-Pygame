@@ -73,9 +73,9 @@ def menu():
                     game(1)
         screen.blit(logo, (8, 25))
         pygame.draw.rect(screen, dark_grey, (45, 120, 210, 73))
-        screen.blit(buttom1, (50, 125))
+        screen.blit(button1, (50, 125))
         pygame.draw.rect(screen, dark_grey, (45, 200, 210, 73))
-        screen.blit(buttom2, (50, 205))
+        screen.blit(button2, (50, 205))
         pygame.display.update()
 
 def game(gameMode):
