@@ -14,3 +14,6 @@ pip install flask-socketio
 
 pip install gunicorn
 
+pip install eventlets
+
+pip install pandas
