@@ -1,3 +1,6 @@
+# edited version so it will work on a gcp vm - virtual desktop
+# disabling all sound
+
 import pygame
 
 # Initialize pygame
