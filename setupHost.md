@@ -28,7 +28,16 @@ nano player
                  proxy_headers_hash_max_size 1024;
                  proxy_headers_hash_bucket_size 256;
                  proxy_pass http://127.0.0.1:5000/;
-        }
+              }
+              location /api1 {
+                 include proxy_params;
+                 proxy_set_header X-Real-IP  $remote_addr;
+                 proxy_set_header X-Forwarded-For $remote_addr;
+                 proxy_set_header Host $host;
+                 proxy_headers_hash_max_size 1024;
+                 proxy_headers_hash_bucket_size 256;
+                 proxy_pass http://127.0.0.1:5001/;
+               }
        }
 
 ctrl x to exit and agree to save
@@ -37,6 +46,10 @@ ctrl x to exit and agree to save
 
 service nginx restart
 
-# open port 81 on gcp portal
+# open ports
+
+       81 on gcp portal
+       5000
+       5001
 
 # wait a few mins
