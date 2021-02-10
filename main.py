@@ -47,12 +47,12 @@ X_score = pygame.image.load('gameData/Images/X_scoreImg.png')
 O_score = pygame.image.load('gameData/Images/O_scoreImg.png')
 
 # Menu Images
-buttom1 = pygame.image.load('gameData/Images/button1Img.png')
-buttom1_rect = buttom1.get_rect()
-buttom1_rect.center = (150, 156)
-buttom2 = pygame.image.load('gameData/Images/button2Img.png')
-buttom2_rect = buttom2.get_rect()
-buttom2_rect.center = (150, 236)
+button1 = pygame.image.load('gameData/Images/button1Img.png')
+button1_rect = button1.get_rect()
+button1_rect.center = (150, 156)
+button2 = pygame.image.load('gameData/Images/button2Img.png')
+button2_rect = button2.get_rect()
+button2_rect.center = (150, 236)
 logo = pygame.image.load('gameData/Images/logo.png')
 
 
@@ -65,10 +65,10 @@ def menu():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                if buttom1_rect.collidepoint((mx, my)):
+                if button1_rect.collidepoint((mx, my)):
                     #playSound('Data/Sounds/buttonSound.wav')
                     game(0)
-                elif buttom2_rect.collidepoint((mx, my)):
+                elif button2_rect.collidepoint((mx, my)):
                     #playSound('Data/Sounds/buttonSound.wav')
                     game(1)
         screen.blit(logo, (8, 25))
@@ -112,7 +112,7 @@ def game(gameMode):
         # Draw in screen graphical elements
         screen.fill(background_color)
         drawBoard()
-        drawBottomMenu(mouse)
+        drawButtonMenu(mouse)
         if row < 3 and col < 3 and gameMode == 0:
             visualizeMove(row, col, previewImg)
         elif row < 3 and col < 3 and player == 'X':
@@ -142,7 +142,7 @@ def drawBoard():
     pygame.draw.rect(screen, color, (295, 0, 5, 300))
 
 
-def drawBottomMenu(mouse):
+def drawButtonMenu(mouse):
     pygame.draw.rect(screen, dark_grey, (0, 300, 300, 50))
     pygame.draw.rect(screen, light_grey, (5, 305, 290, 40))
     screen.blit(restartImg, (250, 310))
