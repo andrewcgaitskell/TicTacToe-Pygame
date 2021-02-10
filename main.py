@@ -2,8 +2,11 @@ import pygame
 
 # Initialize pygame
 # Solve play sounds latency
-pygame.mixer.pre_init(44100, -16, 2, 1024)
-pygame.init()
+# pygame.mixer.pre_init(44100, -16, 2, 1024)
+# pygame.init()
+
+pygame.display.init()
+pygame.font.init()
 
 # Palette - RGB colors
 blue = (78, 140, 243)
@@ -60,10 +63,10 @@ def menu():
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if buttom1_rect.collidepoint((mx, my)):
-                    playSound('Data/Sounds/buttonSound.wav')
+                    #playSound('Data/Sounds/buttonSound.wav')
                     game(0)
                 elif buttom2_rect.collidepoint((mx, my)):
-                    playSound('Data/Sounds/buttonSound.wav')
+                    #playSound('Data/Sounds/buttonSound.wav')
                     game(1)
         screen.blit(logo, (8, 25))
         pygame.draw.rect(screen, dark_grey, (45, 120, 210, 73))
@@ -229,7 +232,7 @@ def isWinner(player):
 
 def verifyWinner(player):
     if isWinner(player):
-        playSound('Data/Sounds/resetSound.wav')
+        #playSound('Data/Sounds/resetSound.wav')
         score[player] += 1
         pygame.time.wait(500)
         resetBoard()
@@ -255,9 +258,9 @@ def resetGame():
     score['O'] = 0
 
 
-def playSound(sound):
-    pygame.mixer.music.load(sound)
-    pygame.mixer.music.play()
+#def playSound(sound):
+#    pygame.mixer.music.load(sound)
+#    pygame.mixer.music.play()
 
 
 menu()
