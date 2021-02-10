@@ -17,15 +17,15 @@ from flask_bootstrap import Bootstrap
 import configparser
 config = configparser.ConfigParser()
 config.sections()
-config.read('app.ini')
+#config.read('app.ini')
 
 eventlet.monkey_patch()
 
-app.config['SECRET'] = config['app']['SECRET']
-app.config['TEMPLATES_AUTO_RELOAD'] = config['app']['SECRET']
+#app.config['SECRET'] = config['app']['SECRET']
+#app.config['TEMPLATES_AUTO_RELOAD'] = config['app']['SECRET']
 
-username = config['web']['USERNAME']
-password = config['web']['PASSWORD']
+#username = config['web']['USERNAME']
+#password = config['web']['PASSWORD']
 
 socketio = SocketIO(app)
 bootstrap = Bootstrap(app)
