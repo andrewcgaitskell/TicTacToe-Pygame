@@ -10,4 +10,5 @@ https://codeburst.io/building-your-first-chat-application-using-flask-in-7-minut
 
 pip install flask
 
+pip install flask-socketio
 
