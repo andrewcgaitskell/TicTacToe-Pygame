@@ -1,3 +1,7 @@
+# install nginx
+
+sudo su
+
 apt install nginx
 
 # check server
