@@ -20,6 +20,15 @@ nano player
               location / {
                       try_files $uri $uri/ =404;
               }
+              location /game {
+                 include proxy_params;
+                 proxy_set_header X-Real-IP  $remote_addr;
+                 proxy_set_header X-Forwarded-For $remote_addr;
+                 proxy_set_header Host $host;
+                 proxy_headers_hash_max_size 1024;
+                 proxy_headers_hash_bucket_size 256;
+                 proxy_pass http://127.0.0.1:5000/;
+        }
        }
 
 ctrl x to exit and agree to save
