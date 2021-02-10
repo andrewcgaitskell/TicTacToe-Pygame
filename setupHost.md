@@ -8,19 +8,19 @@ nano player
 
 # paste following into file
 
-server {
-       listen 81;
-       listen [::]:81;
+       server {
+              listen 81;
+              listen [::]:81;
 
-       server_name player2.acgtest.info;
+              server_name player2.acgtest.info;
 
-       root /var/www/player;
-       index index.html;
+              root /var/www/player;
+              index index.html;
 
-       location / {
-               try_files $uri $uri/ =404;
+              location / {
+                      try_files $uri $uri/ =404;
+              }
        }
-}
 
 ctrl x to exit and agree to save
 
