@@ -3,12 +3,12 @@ Description=uWSGI instance to serve myproject
 After=network.target
 
 [Service]
-EnvironmentFile=/var/www/acgtest.info/server/gunicorn/api1/service.conf
-User=webuser
+EnvironmentFile=/home/andrew_gaitskell/Games/TicTacToe-Pygame/gunicorn/api1/service.conf
+User=andrew_gaitskell
 Group=www-data
-WorkingDirectory=/var/www/acgtest.info/server/gunicorn/api1
-Environment="PATH=/var/www/acgtest.info/server/gunicorn/api1/env/bin"
-ExecStart=/var/www/acgtest.info/server/gunicorn/api1/env/bin/gunicorn --bind 127.0.0.1:5006 --worker-class eventlet -w 1 app:app
+WorkingDirectory=/home/andrew_gaitskell/Games/TicTacToe-Pygame/gunicorn/api1
+Environment="PATH=/home/andrew_gaitskell/Games/env/bin"
+ExecStart=/home/andrew_gaitskell/Games/env/bin/gunicorn --bind 127.0.0.1:5001 --worker-class eventlet -w 1 app:app
 
 [Install]
 WantedBy=multi-user.target
