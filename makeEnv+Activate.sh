@@ -17,3 +17,6 @@ pip install gunicorn
 pip install eventlets
 
 pip install pandas
+
+pip install flask-bootstrap
+
