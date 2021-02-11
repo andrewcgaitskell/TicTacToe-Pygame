@@ -25,15 +25,15 @@ screen = pygame.display.set_mode((300, 350))
 pygame.display.set_caption('')
 
 # Player images
-crossImg = pygame.image.load('Data/Images/crossImg.png')
-circleImg = pygame.image.load('Data/Images/circleImg.png')
-previewCrossImg = pygame.image.load('Data/Images/prev_crossImg.png')
-previewCircleImg = pygame.image.load('Data/Images/prev_circleImg.png')
+crossImg = pygame.image.load('gameData/Images/crossImg.png')
+circleImg = pygame.image.load('gameData/Images/circleImg.png')
+previewCrossImg = pygame.image.load('gameData/Images/prev_crossImg.png')
+previewCircleImg = pygame.image.load('gameData/Images/prev_circleImg.png')
 
 
 # Bottom Menu Images
-restartImg = pygame.image.load('Data/Images/restart.png')
-restartHoveredImg = pygame.image.load('Data/Images/restart_hovered.png')
+restartImg = pygame.image.load('gameData/Images/restart.png')
+restartHoveredImg = pygame.image.load('gameData/Images/restart_hovered.png')
 
 # Define the board
 board = [['', '', ''],
@@ -43,17 +43,17 @@ board = [['', '', ''],
 # Define Scoreboard
 score = {'X': 0, 'O': 0}
 font = pygame.font.Font('freesansbold.ttf', 32)
-X_score = pygame.image.load('Data/Images/X_scoreImg.png')
-O_score = pygame.image.load('Data/Images/O_scoreImg.png')
+X_score = pygame.image.load('gameData/Images/X_scoreImg.png')
+O_score = pygame.image.load('gameData/Images/O_scoreImg.png')
 
 # Menu Images
-button1 = pygame.image.load('Data/Images/button1Img.png')
+button1 = pygame.image.load('gameData/Images/button1Img.png')
 button1_rect = button1.get_rect()
 button1_rect.center = (150, 156)
-button2 = pygame.image.load('Data/Images/button2Img.png')
+button2 = pygame.image.load('gameData/Images/button2Img.png')
 button2_rect = button2.get_rect()
 button2_rect.center = (150, 236)
-logo = pygame.image.load('Data/Images/logo.png')
+logo = pygame.image.load('gameData/Images/logo.png')
 
 
 def menu():
