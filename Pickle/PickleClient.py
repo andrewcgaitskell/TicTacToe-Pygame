@@ -15,4 +15,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.send(pickle.dumps(ge))
     data = s.recv(1024)
 
-print('Received', repr(data))
+arr = pickle.loads(data)
+print('Received', str(arr))
