@@ -15,7 +15,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             arr = pickle.loads(data)
             print(str(arr))
             if not data: break
-            conn.sendall(data)
+            conn.send(pickle.dumps(arr))
+            
     s.close()
  
 ## playerid = 3
