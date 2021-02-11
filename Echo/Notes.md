@@ -1,5 +1,7 @@
 # beginnings
 
+https://github.com/PlainSight/pygameblog/blob/master/game.py
+
 https://docs.python.org/3/library/socket.html#example
 
 # preparations
