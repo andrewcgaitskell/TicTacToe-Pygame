@@ -20,3 +20,5 @@ pip install pandas
 
 pip install flask-bootstrap
 
+pip install sockets
+
