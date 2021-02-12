@@ -22,3 +22,7 @@ pip install flask-bootstrap
 
 pip install sockets
 
+pip install "python-socketio[client]"
+
+pip install "python-socketio[asyncio_client]"
+
