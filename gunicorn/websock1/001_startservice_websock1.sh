@@ -1,4 +1,4 @@
-PROJECT_NAME='api1'
+PROJECT_NAME='websock1'
 FRAMEWORK='gunicorn'
 
 sudo systemctl stop $PROJECT_NAME
