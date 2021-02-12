@@ -38,6 +38,14 @@ nano player
                  proxy_headers_hash_bucket_size 256;
                  proxy_pass http://127.0.0.1:5001/;
                }
+              location /socket.io {
+                 include proxy_params;
+                 proxy_http_version 1.1;
+                 proxy_buffering off;
+                 proxy_set_header Upgrade $http_upgrade;
+                 proxy_set_header Connection "Upgrade";
+                 proxy_pass http://127.0.0.1:5002/socket.io;
+               }
        }
 
 ctrl x to exit and agree to save
