@@ -23,7 +23,10 @@ async def start_server():
     await sio.connect('http://player2.acgtest.info:5006')
     await sio.wait()
 
+async def emitmyeven():
+    await sio.emit('my event', {'data': 'foobar'})
 
 if __name__ == '__main__':
     asyncio.run(start_server())
-    await sio.emit('my event', {'data': 'foobar'})
+    asyncio.run(emitmyeven())
+    
