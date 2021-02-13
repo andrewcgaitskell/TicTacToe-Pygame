@@ -2,7 +2,7 @@ import asyncio
 import websockets
 
 async def hello():
-    uri = "ws://player2.acgtest.info:5008"
+    uri = "ws://player2.acgtest.info:5006"
     async with websockets.connect(uri) as websocket:
         name = input("What's your name? ")
 
