@@ -17,3 +17,7 @@ pip install sockets
 pip install "python-socketio[client]"
 
 pip install "python-socketio[asyncio_client]"
+
+pip install websockets
+
+pip install gevent-websocket
