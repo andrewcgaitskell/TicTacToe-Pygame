@@ -29,7 +29,5 @@ def my_custom_event(arg1, arg2, arg3):
 def handle_my_custom_namespace_event(json):
     print('received json: ' + str(json))
 
- 
-
-if __name__ == '__main__':
-    socketio.run(app)
+#if __name__ == '__main__':
+#    socketio.run(app)
