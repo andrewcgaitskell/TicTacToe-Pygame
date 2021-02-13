@@ -26,3 +26,4 @@ async def start_server():
 
 if __name__ == '__main__':
     asyncio.run(start_server())
+    sio.emit('my event', {'data': 'foobar'})
