@@ -21,3 +21,6 @@ pip install "python-socketio[asyncio_client]"
 pip install websockets
 
 pip install gevent-websocket
+
+pip install Flask-Sockets
+
