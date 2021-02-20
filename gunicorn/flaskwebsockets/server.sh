@@ -1,1 +1,1 @@
-uwsgi --master --http 0.0.0.0:5008 --http-websockets --wsgi server:app
+uwsgi --master --socket 0.0.0.0:5008 --http-websockets --wsgi server:app
