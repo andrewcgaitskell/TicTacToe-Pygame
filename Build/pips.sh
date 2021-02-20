@@ -1,3 +1,5 @@
+pip install uwsgi
+
 pip install pygame
 
 pip install flask
