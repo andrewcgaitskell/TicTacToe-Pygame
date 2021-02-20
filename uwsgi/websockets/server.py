@@ -1,4 +1,4 @@
-import uWSGI
+import uwsgi
 
 def application(env, start_response):
     # complete the handshake
