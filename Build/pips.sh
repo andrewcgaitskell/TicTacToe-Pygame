@@ -24,3 +24,5 @@ pip install gevent-websocket
 
 pip install Flask-Sockets
 
+pip install Flask-uWSGI-WebSocket
+
