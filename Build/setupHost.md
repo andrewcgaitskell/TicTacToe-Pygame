@@ -55,8 +55,8 @@ nano player
                  proxy_pass http://127.0.0.1:5006;
                }
                location /hello {
-                     include uwsgi_params;
                      uwsgi_pass 127.0.0.1:5010;
+                     include uwsgi_params;
                      }
 
        }
