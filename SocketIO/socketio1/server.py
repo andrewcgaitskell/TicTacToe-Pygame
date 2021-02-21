@@ -13,3 +13,5 @@ def connect(sid, environ, auth):
 def disconnect(sid):
     print('disconnect ', sid)
 
+if __name__ == '__main__':
+    web.run_app(app)
