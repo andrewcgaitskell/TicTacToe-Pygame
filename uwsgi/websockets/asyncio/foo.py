@@ -18,7 +18,8 @@ async def foo(loop):
     return (await foo(loop))
 
 
-if __name__ ==  '__main__':
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(foo(loop))
