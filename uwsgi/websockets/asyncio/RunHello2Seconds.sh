@@ -1,1 +1,1 @@
-uwsgi --http-socket 0.0.0.0:5010 --asyncio 10 --greenlet --wsgi-file Hello2Seconds.py
+uwsgi --http-socket 0.0.0.0:5010 --async 10 --greenlet --wsgi-file Hello2Seconds.py
