@@ -4,11 +4,38 @@ from aiohttp import web
 async def hello(request):
     return web.Response(body=b"Hello, world")
 
+async def websocket_handler(request):
+
+    ws = web.WebSocketResponse()
+    await ws.prepare(request)
+
+    while not ws.closed:
+        msg = await ws.receive()
+
+        if msg.tp == aiohttp.MsgType.text:
+            if msg.data == 'close':
+                await ws.close()
+            else:
+                ws.send_str(msg.data + '/answer')
+        elif msg.tp == aiohttp.MsgType.close:
+            print('websocket connection closed')
+        elif msg.tp == aiohttp.MsgType.error:
+            print('ws connection closed with exception %s' %
+                  ws.exception())
+
+    return ws
+##
+
+
 app = web.Application()
 app.router.add_route('GET', '/', hello)
+app.router.add_route('GET', '/ws', websocket_handler)
 
 loop = asyncio.get_event_loop()
 handler = app.make_handler()
+####
+
+
 f = loop.create_server(handler, '0.0.0.0', 5010)
 srv = loop.run_until_complete(f)
 print('serving on', srv.sockets[0].getsockname())
