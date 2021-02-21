@@ -17,7 +17,7 @@ async def websocket_handler(request):
             if msg.data == 'close':
                 await ws.close()
             else:
-                ws.send_str(msg.data + '/answer')
+                await ws.send_str(msg.data + '/answer')
         elif msg.type == aiohttp.WSMsgType.close:
             print('websocket connection closed')
         elif msg.type == aiohttp.WSMsgType.error:
