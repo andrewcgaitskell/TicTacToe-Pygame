@@ -12,14 +12,14 @@ async def websocket_handler(request):
     while not ws.closed:
         msg = await ws.receive()
 
-        if msg.tp == aiohttp.MsgType.text:
+        if msg.type == aiohttp.MsgType.text:
             if msg.data == 'close':
                 await ws.close()
             else:
                 ws.send_str(msg.data + '/answer')
-        elif msg.tp == aiohttp.MsgType.close:
+        elif msg.type == aiohttp.MsgType.close:
             print('websocket connection closed')
-        elif msg.tp == aiohttp.MsgType.error:
+        elif msg.type == aiohttp.MsgType.error:
             print('ws connection closed with exception %s' %
                   ws.exception())
 
