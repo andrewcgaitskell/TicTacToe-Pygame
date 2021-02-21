@@ -1,5 +1,7 @@
 pip install uwsgi
 
+pip install aiohttp_wsgi
+
 pip install pygame
 
 pip install flask
@@ -27,4 +29,6 @@ pip install gevent-websocket
 pip install Flask-Sockets
 
 pip install Flask-uWSGI-WebSocket
+
+
 
