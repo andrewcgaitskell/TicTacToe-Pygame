@@ -1,1 +1,1 @@
-from foobar import app as application
+from foobar import application as application
