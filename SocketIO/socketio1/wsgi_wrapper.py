@@ -1,6 +1,6 @@
 from aiohttp import web
 from aiohttp_wsgi import WSGIHandler
-from foobar.wsgi import application
+from foobar import application
 
 wsgi_handler = WSGIHandler(application)
 
