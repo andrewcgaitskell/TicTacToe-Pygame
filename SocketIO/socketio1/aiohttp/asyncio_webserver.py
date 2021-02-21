@@ -36,7 +36,6 @@ app.router.add_route('GET', '/ws/', websocket_handler)
 #handler = app.make_handler()
 ####
 
-start_response('200 OK', [('Content-Type','text/html')])
 loop = asyncio.get_event_loop()
 handler = app.make_handler()
 f = loop.create_server(handler, '0.0.0.0', 5010)
