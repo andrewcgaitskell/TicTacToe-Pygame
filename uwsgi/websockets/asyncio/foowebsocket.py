@@ -26,7 +26,6 @@ def application(environ, start_response):
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(start_server)
-    finally:
-        loop.run_until_complete(loop.shutdown_asyncgens())  # Python 3.6 only
-        loop.close()
+    except:
+        return "all over"
 
