@@ -26,6 +26,6 @@ def application(environ, start_response):
     loop = asyncio.get_event_loop()
     try:
         loop.run_until_complete(start_server)
+        loop.run_forever()
     except:
-        return "all over"
-
+        print(f"All Over")
