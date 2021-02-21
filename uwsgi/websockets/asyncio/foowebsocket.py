@@ -19,7 +19,7 @@ async def hello(websocket, path):
 # Also host="" seems to work for external access
 # start_server = websockets.serve(hello, host="10.0.2.29", port=8765)
 #start_server = websockets.serve(hello, host="" , port=5010)
-start_server = websockets.serve(hello, host="")
+start_server = websockets.serve(hello, host="127.0.0.1", port=5011)
 
 def application(environ, start_response):
     start_response('200 OK', [('Content-Type','text/html')])
