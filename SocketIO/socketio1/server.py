@@ -1,8 +1,9 @@
 import socketio
 
 # create a Socket.IO server
-sio = socketio.AsyncServer(logger=True, engineio_logger=True)
+sio = socketio.Server()
 
+# wrap with a WSGI application
 app = socketio.WSGIApp(sio)
 
 @sio.event
