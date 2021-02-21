@@ -17,7 +17,7 @@ nano player
               root /var/www/player;
               index index.html;
 
-              location /home {
+              location / {
                       try_files $uri $uri/ =404;
               }
               location /game {
@@ -54,7 +54,7 @@ nano player
                  proxy_set_header Connection "Upgrade";
                  proxy_pass http://127.0.0.1:5006;
                }
-               location / {
+               location /hello {
                      uwsgi_pass 127.0.0.1:5010;
                      include uwsgi_params;
                      }
