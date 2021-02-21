@@ -4,6 +4,7 @@
 
 import asyncio
 import websockets
+from datetime import datetime
 
 async def hello(websocket, path):
     name = await websocket.recv()
@@ -19,6 +20,13 @@ async def hello(websocket, path):
 # start_server = websockets.serve(hello, host="10.0.2.29", port=8765)
 start_server = websockets.serve(hello, host="" , port=5010)
 
-asyncio.get_event_loop().run_until_complete(start_server)
 
-asyncio.get_event_loop().run_forever()
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    loop = asyncio.get_event_loop()
+    try:
+        loop.run_until_complete(start_server)
+    finally:
+        loop.run_until_complete(loop.shutdown_asyncgens())  # Python 3.6 only
+        loop.close()
+
