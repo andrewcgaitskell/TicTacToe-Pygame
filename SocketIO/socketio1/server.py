@@ -1,7 +1,7 @@
 import socketio
 
 # create a Socket.IO server
-sio = socketio.AsyncServer()
+sio = socketio.AsyncServer(logger=True, engineio_logger=True)
 
 app = socketio.WSGIApp(sio)
 
