@@ -29,7 +29,7 @@ async def websocket_handler(request):
 
 app = web.Application()
 app.router.add_route('GET', '/', hello)
-app.router.add_route('GET', '/ws', websocket_handler)
+app.router.add_route('GET', '/ws/', websocket_handler)
 
 loop = asyncio.get_event_loop()
 handler = app.make_handler()
