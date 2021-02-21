@@ -9,7 +9,7 @@ app.router.add_route('GET', '/', hello)
 
 loop = asyncio.get_event_loop()
 handler = app.make_handler()
-f = loop.create_server(handler, '0.0.0.0', 8080)
+f = loop.create_server(handler, '0.0.0.0', 5010)
 srv = loop.run_until_complete(f)
 print('serving on', srv.sockets[0].getsockname())
 
