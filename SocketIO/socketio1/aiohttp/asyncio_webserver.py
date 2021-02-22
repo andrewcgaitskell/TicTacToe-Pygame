@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 from aiohttp import web
 
-counter = 1
+global counter = 1
 
 async def hello(request):
     return web.Response(body=b"Hello, world")
