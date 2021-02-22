@@ -2,15 +2,13 @@ import asyncio
 import aiohttp
 from aiohttp import web
 
-global counter
-
 counter = 1
 
 async def hello(request):
     return web.Response(body=b"Hello, world")
 
 async def websocket_handler(request):
-
+    global counter
     ws = web.WebSocketResponse()
     await ws.prepare(request)
 
